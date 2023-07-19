@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">    <title>Reserva Seminario</title>
+</head>
+
+<body class="container mt-5">
+
+    <div class="alert alert-info display-1 text-center">
+        LISTADO DE RESERVAS
+    </div>
+{% if verUsuarios %}
+    <table class="table table-striped table-inverse table-responsive">
+        <thead class="thead-inverse">
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Teléfono</th>
+                <th>Fecha</th>
+                <th>Organización</th>
+                <th>Hora</th>
+                <th>Estado</th>
+                <th>Observaciones</th>
+                <th>Editar</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for participante in participantes %}
+            <tr>
+                <td>{{ reserva.ID}}</td>
+                <td>{{ reserva.nombre}}</td>
+                <td>{{ reserva.telefono}}</td>
+                <td>{{ reserva.fechaSeminario}}</td>
+                <td>{{ reserva.empresaInstitucion}}</td>
+                <td>{{ reserva.email }}</td>
+                <td>{{ reserva.profesion }}</td>
+                <td>{{ reserva.observacion }}</td>
+
+                <td><a href="/modificarSeminario/{{reserva.id}}" class="btn btn-success btn-sm"><i
+                            class="bi bi-pencil"></i></a>
+                </td>
+                <td><a href="/eliminarSeminario/{{reserva.id}}" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></a>
+                </td>
+
+            </tr>
+            {% endfor %}
+        </tbody>
+
+    </table>
+    {% else %}
+    <div class="alert alert-primary" role="alert">
+        <strong>No se encontraron proyecto en el sistema</strong>
+    </div>
+    {% endif %}
+
+    <a href="../" class="btn btn-danger">VOLVER</a>
+
+    <a href="../agregar" class="btn btn-info float-end">AGREGAR</a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
