@@ -1,0 +1,33 @@
+/* Agregamos estilos para las tarjetas */
+.custom-card {
+    width: 18rem;
+}
+.custom-card img {
+    width: 286.4px;
+    height: 379.267px;
+    object-fit: cover;
+}
+
+.background{
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+}
+
+.custom-card {
+    width: 18rem;
+    /* Agregamos efecto de hover */
+    transition: transform 0.3s ease;
+}
+
+/* Cambiamos el cursor a un puntero al pasar por encima */
+.custom-card:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.rosa{
+    background-color: #FF00FF;
+    color: #ffff;
+    font-size: 15px;
+}

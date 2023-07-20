@@ -15,11 +15,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from Django_taller_final_app.views import index, guardar, verPartipantes
+from Django_taller_final_app.views import index, guardar, verPartipantes, ParticipanteList, ParticipanteDetalle, participante_list, participante_detalle
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index),
     path('guardar/', guardar),
     path('participantes/', verPartipantes),
-]
+    path('clase/', ParticipanteList.as_view()),
+    path('clase/<int:pk>/', ParticipanteDetalle.as_view()),
+    path('funcion/', participante_list),
+    path('funcion/<int:id>', participante_detalle )
+
+
+]   
