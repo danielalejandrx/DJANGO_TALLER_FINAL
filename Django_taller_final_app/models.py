@@ -15,4 +15,4 @@ class Participantes(models.Model):
     institucion = models.CharField(max_length=15)
     hora_inscripcion = models.TimeField()
     estado = models.CharField(max_length=15, choices=Estado.choices, default=Estado.RESERVADO)
-    observacion = models.CharField(max_length=50)
+    observacion = models.CharField(max_length=50, null=True, blank=True)
